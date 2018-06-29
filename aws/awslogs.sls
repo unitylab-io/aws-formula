@@ -21,6 +21,12 @@ awslogs.conf:
     - source: salt://aws/files/awslogs.conf
     - template: jinja
 
+aws.conf:
+  file.managed:
+    - name: /var/awslogs/etc/aws.conf
+    - source: salt://aws/files/aws.conf
+    - template: jinja
+
 awslogs:
   service.running:
     - enable: True
