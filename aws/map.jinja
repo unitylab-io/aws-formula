@@ -6,11 +6,7 @@
       'log_format': 'json',
       'eip_enable_standby_mode': True,
       'eip_enable_failover_mode': False,
-      'awslogs': {
-        'log_files': {},
-        'log_group_prefix': salt['grains.get']('aws:cloudformation:stack-name', delimiter='|'),
-        'log_stream_id_grain': 'id'
-      }
+      'awslogs': {}
     }
 }, grain='osfinger', merge=salt['pillar.get']('aws',{}), default='Default') %}
 
